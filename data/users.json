@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "email": "admin@example.com",
+    "password": "password",
+    "name": "Admin User",
+    "role": "admin",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=admin@example.com"
+  },
+  {
+    "id": "2",
+    "email": "user@example.com",
+    "password": "password",
+    "name": "Regular User",
+    "role": "user",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=user@example.com"
+  }
+]

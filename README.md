@@ -194,11 +194,12 @@ npm start
 This project supports two storage backends:
 
 - **Local Development (JSON files)**
+
   - All data is read from and written to JSON files under `src/lib/store/`.
   - Example stores: `userStore.json`, `taskStore.json`.
   - No external dependencies—ideal for local testing and rapid prototyping.
-
 - **Production on Vercel (KV Store)**
+
   - Uses Vercel KV (Key–Value) storage for persisting data at scale.
   - Enable KV by provisioning the [Vercel KV addon](https://vercel.com/docs/storage/kv).
   - Set the environment variable `USE_KV=true` in your Vercel dashboard to switch from file storage to KV.

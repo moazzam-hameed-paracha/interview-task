@@ -5,7 +5,6 @@ export enum tagTypes {
   AUTH = "AUTH",
   TASKS = "TASKS",
   USERS = "USERS",
-  WEBSOCKET = "WEBSOCKET",
 }
 
 interface FetchProps<ReqType> {

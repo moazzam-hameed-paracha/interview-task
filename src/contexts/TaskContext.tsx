@@ -50,7 +50,7 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
   const deleteTaskMutation = useDeleteTask();
 
   const queryClient = useQueryClient();
-  const { lastMessage, sendMessage } = useWebSocket();
+  const { lastMessage } = useWebSocket();
 
   const [tasks, setTasks] = useState<GetTasksResType>(tasksData);
 

@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Persist user to JSON store
-    const users = readUsers()
+    const users = await readUsers()
     users.push(newUser)
     writeUsers(users)
 

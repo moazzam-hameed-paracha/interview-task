@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     const { email, password } = validation.data
 
     // Find user
-    const users = readUsers()
+    const users = await readUsers()
     const user = users.find((u) => u.email === email && u.password === password)
     if (!user) {
       return NextResponse.json(

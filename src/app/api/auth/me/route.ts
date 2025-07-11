@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
 
     // Extract user ID from mock token
     const userId = token.split("-")[3];
-    const users = readUsers();
+    const users = await readUsers();
     const user = users.find((u) => u.id === userId);
 
     if (!user) {

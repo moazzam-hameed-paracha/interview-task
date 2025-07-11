@@ -16,7 +16,8 @@ export async function GET(request: NextRequest) {
     const currentUserId = authHeader?.split("-").at(3);
     const currentUserRole = request.cookies.get("role")?.value as Role || "user";
 
-    let filteredTasks = [...readTasks()];
+    const tasks = await readTasks();
+    let filteredTasks = [...tasks];
     // Apply createdBy filter for admin, or restrict non-admin to own tasks
     if (currentUserRole === "admin" && createdBy) {
       filteredTasks = filteredTasks.filter(
@@ -107,7 +108,7 @@ export async function POST(request: NextRequest) {
       dueDate: dueDate ? new Date(dueDate) : undefined,
     };
 
-    const tasks = readTasks();
+    const tasks = await readTasks();
     tasks.push(newTask);
     writeTasks(tasks);
 

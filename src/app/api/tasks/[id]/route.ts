@@ -22,7 +22,7 @@ export async function PUT(
       );
     }
 
-    const tasks = readTasks();
+    const tasks = await readTasks();
     const taskIndex = tasks.findIndex((task) => task.id === taskId);
     if (taskIndex === -1) {
       return NextResponse.json(
@@ -72,8 +72,8 @@ export async function DELETE(
   try {
     const taskId = params.id;
 
-    const tasks = readTasks();
-    const taskIndex = tasks.findIndex((task) => task.id === taskId);
+    const tasks = await readTasks();
+    const taskIndex =  tasks.findIndex((task) => task.id === taskId);
     if (taskIndex === -1) {
       return NextResponse.json(
         {
